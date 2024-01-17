@@ -6,6 +6,8 @@ env/
 *.env
 *.local
 
+node_modules/
+
 migrations
 
 # Editor directories and files
