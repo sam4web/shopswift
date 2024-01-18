@@ -1,4 +1,12 @@
 {
+  "name": "shopswift",
+  "description": "SwiftShop: Elegant e-commerce site with Django, a learning project for web development fundamentals.",
+  "scripts": {
+    "watch": "tailwindcss -i ./src/index.css -o ./dist/output.css --watch"
+  },
+  "keywords": [],
+  "author": "sam4web",
+  "license": "MIT",
   "devDependencies": {
     "tailwindcss": "^3.4.1"
   }
