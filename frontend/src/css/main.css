@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-display;
+  }
+
+  .wrapper {
+    @apply max-w-7xl w-full mx-auto px-4 lg:px-12 md:px-12 my-6 py-3  lg:my-10 lg:py-12;
+  }
+
+  .nav-link {
+    @apply text-primary-dark font-normal text-base hover:text-light hover:bg-primary transition px-3.5 py-2.5 rounded-md;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply text-lg text-primary-dark bg-transparent hover:text-light hover:bg-primary px-3 md:px-5 py-2 md:py-3 rounded-md border-primary border-2 transition;
+  }
+}
