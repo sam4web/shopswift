@@ -4,22 +4,32 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 @layer base {
   body {
     @apply font-display;
   }
+}
 
+@layer utilities {
   .wrapper {
-    @apply max-w-7xl w-full mx-auto px-4 lg:px-12 md:px-12 my-6 py-3  lg:my-10 lg:py-12;
+    @apply max-w-7xl w-full mx-auto px-4 lg:px-12 md:px-12 my-6 py-3 lg:my-11 lg:py-10;
   }
 
   .nav-link {
-    @apply text-primary-dark font-normal text-base hover:text-light hover:bg-primary transition px-3.5 py-2.5 rounded-md;
+    @apply text-primary-dark dark:text-light font-normal text-sm sm:text-base hover:text-light dark:hover:bg-gray-dark sm:hover:bg-primary sm:px-3.5 sm:py-2.5 rounded-md px-2.5 py-1  hover:bg-primary-dark w-full cursor-pointer;
   }
-}
 
-@layer components {
-  .btn {
-    @apply text-lg text-primary-dark bg-transparent hover:text-light hover:bg-primary px-3 md:px-5 py-2 md:py-3 rounded-md border-primary border-2 transition;
+  .btn-primary {
+    @apply text-lg text-light bg-primary px-3 md:px-5 py-2 md:py-3 rounded-md border-primary border-2 transition hover:text-primary-dark hover:bg-transparent dark:hover:text-light;
+  }
+
+  .btn-secondary {
+    @apply text-lg text-primary-dark bg-transparent dark:text-light hover:text-light hover:bg-primary px-3 md:px-5 py-2 md:py-3 rounded-md border-primary border-2 transition;
   }
 }
