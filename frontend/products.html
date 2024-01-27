@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/main.min.css" />
+    <title>Products | ShopSwift</title>
+  </head>
+  <body>
+    <div class="flex flex-col w-full h-screen">
+      <app-header></app-header>
+      <main class="transition-all dark:bg-body-dark py-1 flex-1">
+        <div
+          class="grid grid-cols-4 items-start space-x-5 lg:space-x-9 wrapper"
+        >
+          <aside
+            class="col-span-1 px-3 md:px-5 py-7 bg-light dark:bg-primary-dark transition rounded-md space-y-7"
+          >
+            <div>
+              <label
+                for="product"
+                class="mb-1 inline-block text-gray-dark text-base dark:text-white"
+              >
+                Search Product
+              </label>
+              <input
+                class="w-full border-2 border-gray-200 outline-none dark:bg-body-dark transition dark:border-transparent px-2 py-1 rounded-md dark:text-light"
+                type="text"
+                name="product"
+                id="product"
+              />
+            </div>
+
+            <div>
+              <label
+                for="category"
+                class="mb-1 inline-block text-gray-dark text-base dark:text-white"
+              >
+                Select Category
+              </label>
+              <select
+                name="category"
+                id="category"
+                class="w-full border-2 border-gray-200 outline-none dark:bg-body-dark transition dark:border-transparent px-2 py-1 rounded-md dark:text-light"
+              >
+                <option value="all" selected class="capitalize">all</option>
+              </select>
+            </div>
+
+            <div>
+              <label
+                for="sort"
+                class="mb-1 inline-block text-gray-dark text-base dark:text-white"
+              >
+                Sort By
+              </label>
+              <select
+                name="sort"
+                id="sort"
+                class="w-full border-2 border-gray-200 outline-none dark:bg-body-dark transition dark:border-transparent px-2 py-1 rounded-md dark:text-light"
+              >
+                <option value="low" selected>Price (Lowest)</option>
+                <option value="high">Price (Highest)</option>
+                <option value="order">Name (A - Z)</option>
+                <option value="reverse-order">Name (Z - A)</option>
+              </select>
+            </div>
+
+            <div>
+              <label
+                for="min"
+                class="mb-1 inline-block text-gray-dark text-base dark:text-white"
+              >
+                Price Range
+              </label>
+              <div class="flex gap-3 items-center">
+                <input
+                  class="border-2 w-full border-gray-200 outline-none dark:bg-body-dark transition dark:border-transparent px-2 py-1 rounded-md dark:text-light"
+                  type="number"
+                  name="product"
+                  id="product"
+                  placeholder="Min"
+                  min="0"
+                />
+                -
+                <input
+                  class="border-2 w-full border-gray-200 outline-none dark:bg-body-dark transition dark:border-transparent px-2 py-1 rounded-md dark:text-light"
+                  type="number"
+                  name="product"
+                  id="product"
+                  placeholder="Max"
+                  min="0"
+                />
+              </div>
+            </div>
+
+            <div class="flex justify-start items-center gap-3">
+              <label
+                for="free-shipping"
+                class="inline-block text-gray-dark text-base dark:text-white"
+              >
+                Free Shipping
+              </label>
+              <input
+                type="checkbox"
+                name="free-shipping"
+                class="w-[15px] h-[15px]"
+                id="free-shipping"
+              />
+            </div>
+
+            <div class="flex gap-2.5">
+              <button
+                class="w-full text-base text-light bg-primary px-3 py-2 rounded-md border-primary transition"
+              >
+                Submit
+              </button>
+              <button
+                class="w-full text-base text-light bg-red-600 px-3 py-2 rounded-md border-primary transition"
+              >
+                Reset
+              </button>
+            </div>
+          </aside>
+
+          <section class="col-span-3">
+            <div class="flex justify-between items-center">
+              <p class="text-lg dark:text-light">22 Products Found</p>
+
+              <div class="space-x-1">
+                <button
+                  class="border-2 rounded-md border-transparent bg-gray-dark dark:bg-white transition"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 text-white dark:text-primary-dark"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="border-2 rounded-md border-gray-dark dark:border-white"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 dark:text-white"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700" />
+
+            <!-- GRID LAYOUT
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-6
+            >
+              <script>
+                for (let i = 0; i < 3; i++) {
+                  document.write(`
+                <div
+                  class="shadow-md rounded-lg p-5 space-y-2 text-center bg-white dark:bg-primary-dark"
+                >
+                  <img
+                    src="./src/assets/product-0${i + 1}.jpg"
+                    class="rounded-md mb-5"
+                    alt=""
+                  />
+                  <div class="flex justify-between items-center gap-3">
+                    <h3 class="text-md dark:text-light">Avant-Garde Lamp</h3>
+                    <p class="text-sm text-gray dark:text-light">$179.99</p>
+                  </div>
+                </div>
+                `);
+                }
+              </script>
+            </div> 
+            -->
+
+            <!-- LINE LAYOUT -->
+            <div class="space-y-6 my-6">
+              <script>
+                for (let i = 0; i < 3; i++) {
+                  document.write(`
+                      <div class="shadow-md rounded-lg p-5 space-x-7 text-center bg-white dark:bg-primary-dark flex items-start">
+                            <img
+                            src="./src/assets/product-0${i + 1}.jpg"
+                            class="rounded-md mb-5 w-1/3"
+                            alt=""
+                            />
+                            <div class="space-y-3 text-left">
+                            <div class="flex justify-between">
+                                <h3 class="text-xl dark:text-light">Avant-Garde Lamp</h3>
+                                <p class="text-lg text-primary font-medium">$179.99</p>
+                            </div>
+                            <p class="text-gray dark:text-light">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Totam tempore, minima explicabo veniam consequatur molestiae
+                                libero assumenda, quas eos doloribus obcaecati sit ipsa non.
+                            </p>
+                            <button
+                                class="text-base text-light bg-primary px-3 py-1.5 rounded-md border-primary transition"
+                            >
+                                Detail
+                            </button>
+                            </div>
+                        </div>
+                    `);
+                }
+              </script>
+            </div>
+          </section>
+        </div>
+      </main>
+      <app-footer></app-footer>
+    </div>
+
+    <script src="./src/js/component.js"></script>
+    <script src="./src/js/script.js"></script>
+  </body>
+</html>

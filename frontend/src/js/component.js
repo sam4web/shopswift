@@ -2,7 +2,7 @@ class Header extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <header class="dark:bg-body-dark">
-    <nav class="bg-primary-dark dark:bg-gray-dark transition">
+    <nav class="bg-secondary-dark dark:bg-gray-dark transition">
       <div class="max-w-7xl w-full mx-auto px-6 lg:px-10 md:px-12 py-1.5">
         <ul
           class="text-light flex justify-center md:justify-end space-x-6 text-sm md:text-[16px] font-light"
@@ -16,7 +16,7 @@ class Header extends HTMLElement {
         </ul>
       </div>
     </nav>
-    <nav class="bg-light dark:bg-secondary-dark transition">
+    <nav class="bg-light dark:bg-primary-dark transition">
       <div class="max-w-7xl w-full mx-auto px-6 lg:px-10 md:px-12 py-4">
         <div class="flex justify-between items-center">
           <h3 class="sm:block hidden">
@@ -36,10 +36,10 @@ class Header extends HTMLElement {
               <a class="nav-link" href="./about.html"> About </a>
             </li>
             <li>
-              <a class="nav-link" href=""> Products </a>
+              <a class="nav-link" href="./products.html"> Products </a>
             </li>
             <li>
-              <a class="nav-link" href=""> Cart </a>
+              <a class="nav-link" href="./cart.html"> Cart </a>
             </li>
           </ul>
 
@@ -118,7 +118,7 @@ class Header extends HTMLElement {
 
     <nav
       id="sm-navbar"
-      class="bg-light dark:bg-secondary-dark mt-2 max-w-[200px] mx-8 p-2 rounded-md hidden sm:hidden transition"
+      class="bg-light dark:bg-primary-dark mt-2 max-w-[200px] mx-8 p-2 rounded-md hidden sm:hidden transition"
     >
       <ul>
         <li>
@@ -128,10 +128,10 @@ class Header extends HTMLElement {
           <a class="nav-link" href="./about.html"> About </a>
         </li>
         <li>
-          <a class="nav-link" href=""> Products </a>
+        <a class="nav-link" href="./products.html"> Products </a>
         </li>
         <li>
-          <a class="nav-link" href=""> Cart </a>
+          <a class="nav-link" href="./cart.html"> Cart </a>
         </li>
       </ul>
     </nav>
@@ -143,7 +143,7 @@ class Header extends HTMLElement {
 class Footer extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `    
-  <footer class="dark:bg-secondary-dark bg-primary-dark transition">
+  <footer class="dark:bg-primary-dark bg-secondary-dark transition">
     <div class="py-8 md:py-12 px-4 text-center">
       <p class="text-light text-lg">
         &copy; ${new Date().getFullYear()}

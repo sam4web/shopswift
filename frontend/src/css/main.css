@@ -10,10 +10,14 @@
   box-sizing: border-box;
 }
 
-@layer base {
-  body {
-    @apply font-display;
-  }
+body {
+  @apply font-display;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @layer utilities {
@@ -22,14 +26,14 @@
   }
 
   .nav-link {
-    @apply text-primary-dark dark:text-light font-normal text-sm sm:text-base hover:text-light dark:hover:bg-gray-dark sm:hover:bg-primary sm:px-3.5 sm:py-2.5 rounded-md px-2.5 py-1  hover:bg-primary-dark w-full cursor-pointer;
+    @apply text-secondary-dark dark:text-light font-normal text-sm sm:text-base hover:text-light dark:hover:bg-gray-dark sm:hover:bg-primary sm:px-3.5 sm:py-2.5 rounded-md px-2.5 py-1  hover:bg-secondary-dark w-full cursor-pointer;
   }
 
   .btn-primary {
-    @apply text-lg text-light bg-primary px-3 md:px-5 py-2 md:py-3 rounded-md border-primary border-2 transition hover:text-primary-dark hover:bg-transparent dark:hover:text-light;
+    @apply text-lg text-light bg-primary px-3 md:px-5 py-2 md:py-3 rounded-md border-primary border-2 transition hover:text-secondary-dark hover:bg-transparent dark:hover:text-light;
   }
 
   .btn-secondary {
-    @apply text-lg text-primary-dark bg-transparent dark:text-light hover:text-light hover:bg-primary px-3 md:px-5 py-2 md:py-3 rounded-md border-primary border-2 transition;
+    @apply text-lg text-secondary-dark bg-transparent dark:text-light hover:text-light hover:bg-primary px-3 md:px-5 py-2 md:py-3 rounded-md border-primary border-2 transition;
   }
 }
