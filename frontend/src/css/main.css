@@ -36,4 +36,20 @@ input[type='number']::-webkit-outer-spin-button {
   .btn-secondary {
     @apply text-lg text-secondary-dark bg-transparent dark:text-light hover:text-light hover:bg-primary px-3 md:px-5 py-2 md:py-3 rounded-md border-primary border-2 transition;
   }
+
+  .input-field {
+    @apply w-full border-2 border-gray-200 outline-none dark:bg-body-dark transition dark:border-transparent px-2 py-1 rounded-md dark:text-light;
+  }
+
+  .input-label {
+    @apply mb-1 inline-block text-gray-dark text-base dark:text-white;
+  }
+
+  .auth-input-field {
+    @apply w-full border-2 border-gray-dark outline-none px-4 py-3 rounded-md;
+  }
+
+  .auth-input-label {
+    @apply mb-1 inline-block text-gray-dark text-base;
+  }
 }
