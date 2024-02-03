@@ -115,7 +115,7 @@ class Header extends HTMLElement {
     </nav>
 
     <nav
-      x-bind:class="navbarToggle && 'hidden'"
+      x-bind:class="!navbarToggle && 'hidden'"
       class="bg-light dark:bg-primary-dark mt-2 max-w-[200px] mx-8 p-2 rounded-md sm:hidden transition"
     >
       <ul>
