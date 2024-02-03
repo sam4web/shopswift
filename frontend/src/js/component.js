@@ -1,7 +1,9 @@
 class Header extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-    <header class="dark:bg-body-dark">
+    <header class="dark:bg-body-dark"
+    x-data="{navbarToggle: false}"
+    >
     <nav class="bg-secondary-dark dark:bg-gray-dark transition">
       <div class="max-w-7xl w-full mx-auto px-6 lg:px-10 md:px-12 py-1.5">
         <ul
@@ -43,7 +45,7 @@ class Header extends HTMLElement {
             </li>
           </ul>
 
-          <button id="nav-toggle" class="block sm:hidden">
+          <button class="block sm:hidden" x-on:click="navbarToggle=!navbarToggle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -60,8 +62,7 @@ class Header extends HTMLElement {
             </svg>
           </button>
 
-          <ul class="flex items-center space-x-5">
-            <li>
+          <div class="flex items-center gap-5">
               <button id="toggle-btn">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -92,8 +93,6 @@ class Header extends HTMLElement {
                   />
                 </svg>
               </button>
-            </li>
-            <li>
               <a href="">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -110,15 +109,14 @@ class Header extends HTMLElement {
                   />
                 </svg>
               </a>
-            </li>
-          </ul>
+          </div>
         </div>
       </div>
     </nav>
 
     <nav
-      id="sm-navbar"
-      class="bg-light dark:bg-primary-dark mt-2 max-w-[200px] mx-8 p-2 rounded-md hidden sm:hidden transition"
+      x-bind:class="navbarToggle && 'hidden'"
+      class="bg-light dark:bg-primary-dark mt-2 max-w-[200px] mx-8 p-2 rounded-md sm:hidden transition"
     >
       <ul>
         <li>

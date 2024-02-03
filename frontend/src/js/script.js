@@ -1,9 +1,3 @@
-const smNavbar = document.querySelector('#sm-navbar');
-
-document.querySelector('#nav-toggle').addEventListener('click', () => {
-  smNavbar.classList.toggle('hidden');
-});
-
 const toggleBtn = document.querySelector('#toggle-btn');
 let darkToggleOn = JSON.parse(localStorage.getItem('isDarkTheme'));
 
