@@ -30,11 +30,11 @@ input[type='number']::-webkit-outer-spin-button {
   }
 
   .nav-link {
-    @apply text-secondary-dark dark:text-light font-normal text-sm sm:text-base hover:text-light dark:hover:bg-gray-dark sm:hover:bg-primary sm:px-3.5 sm:py-2.5 rounded-md px-2.5 py-1  hover:bg-secondary-dark w-full cursor-pointer;
+    @apply text-secondary-dark dark:text-light font-normal text-base md:text-sm hover:text-light dark:hover:bg-gray-dark md:hover:bg-primary px-2 md:py-2.5 rounded-md py-1 hover:bg-secondary-dark w-full cursor-pointer;
   }
 
   .btn-primary {
-    @apply text-lg text-light bg-primary px-3 md:px-5 py-2 md:py-3 rounded-md border-primary border-2 transition hover:text-secondary-dark hover:bg-transparent dark:hover:text-light;
+    @apply text-base text-light bg-primary px-3 md:px-5 py-2 md:py-3 rounded-lg border-primary border-2 transition hover:text-secondary-dark hover:bg-transparent dark:hover:text-light;
   }
 
   .btn-secondary {
@@ -42,7 +42,15 @@ input[type='number']::-webkit-outer-spin-button {
   }
 
   .input-field {
-    @apply w-full border-2 border-gray-200 outline-none dark:bg-body-dark transition dark:border-transparent px-2 py-1 rounded-md dark:text-light;
+    @apply w-full border-2 border-gray-200 outline-none transition dark:border-transparent rounded-md dark:text-light;
+  }
+
+  .input-field__sm {
+    @apply input-field px-2 py-1 dark:bg-body-dark;
+  }
+
+  .input-field__lg {
+    @apply input-field px-4 py-3 dark:bg-primary-dark;
   }
 
   .input-label {
@@ -50,7 +58,7 @@ input[type='number']::-webkit-outer-spin-button {
   }
 
   .auth-input-field {
-    @apply w-full border-2 border-gray-dark outline-none px-4 py-3 rounded-md;
+    @apply w-full border-2 border-gray-200 outline-none px-4 py-3 rounded-md;
   }
 
   .auth-input-label {

@@ -1,13 +1,13 @@
 class Header extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-    <header class="dark:bg-body-dark"
+    <header class="dark:bg-body-dark transition"
     x-data="{navbarToggle: false}"
     >
     <nav class="bg-secondary-dark dark:bg-gray-dark transition">
-      <div class="max-w-7xl w-full mx-auto px-6 lg:px-10 md:px-12 py-1.5">
+      <div class="max-w-7xl w-full mx-auto px-4 lg:px-10 py-1.5">
         <ul
-          class="text-light flex justify-center md:justify-end space-x-6 text-sm md:text-[16px] font-light"
+          class="text-light flex justify-center sm:justify-end space-x-6 text-sm md:text-[16px] font-light"
         >
           <li>
             <a href="./login.html" class="hover:underline">Sign in</a>
@@ -19,9 +19,9 @@ class Header extends HTMLElement {
       </div>
     </nav>
     <nav class="bg-light dark:bg-primary-dark transition">
-      <div class="max-w-7xl w-full mx-auto px-6 lg:px-10 md:px-12 py-4">
+      <div class="max-w-7xl w-full mx-auto px-4 lg:px-10 py-4">
         <div class="flex justify-between items-center">
-          <h3 class="sm:block hidden">
+          <h3 class="md:block hidden">
             <a
               href="./index.html"
               class="text-3xl lg:text-[34px] font-bold font-heading dark:text-light"
@@ -30,7 +30,7 @@ class Header extends HTMLElement {
             </a>
           </h3>
 
-          <ul class="hidden sm:flex items-center lg:space-x-1">
+          <ul class="hidden md:flex items-center">
             <li>
               <a class="nav-link" href="./index.html"> Home </a>
             </li>
@@ -43,9 +43,16 @@ class Header extends HTMLElement {
             <li>
               <a class="nav-link" href="./cart.html"> Cart </a>
             </li>
+
+            <li>
+              <a class="nav-link" href="./checkout.html"> Checkout </a>
+            </li>
+            <li>
+              <a class="nav-link" href="./orders.html"> Orders </a>
+            </li>
           </ul>
 
-          <button class="block sm:hidden" x-on:click="navbarToggle=!navbarToggle">
+          <button class="block md:hidden" x-on:click="navbarToggle=!navbarToggle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -116,9 +123,9 @@ class Header extends HTMLElement {
 
     <nav
       x-bind:class="!navbarToggle && 'hidden'"
-      class="bg-light dark:bg-primary-dark mt-2 max-w-[200px] mx-8 p-2 rounded-md sm:hidden transition"
+      class="bg-light dark:bg-primary-dark mt-2 max-w-[240px] mx-auto sm:ml-8 p-2 rounded-md md:hidden transition"
     >
-      <ul>
+      <ul class="space-y-2.5">
         <li>
           <a class="nav-link" href="./index.html"> Home </a>
         </li>
@@ -142,7 +149,7 @@ class Footer extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `    
   <footer class="dark:bg-primary-dark bg-secondary-dark transition">
-    <div class="py-8 md:py-12 px-4 text-center">
+    <div class="py-6 px-4 text-center">
       <p class="text-light text-lg">
         &copy; ${new Date().getFullYear()}
         <span class="text-primary font-semibold">ShopSwift</span>. All

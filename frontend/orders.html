@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/main.min.css" />
+    <title>Checkout | ShopSwift</title>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body>
+    <div class="flex flex-col w-full h-screen">
+      <app-header></app-header>
+      <main class="transition-all dark:bg-body-dark py-1 flex-1">
+        <div class="wrapper">
+          <section>
+            <h3
+              class="text-3xl dark:text-light text-gray font-medium transition"
+            >
+              Place Your Order
+            </h3>
+            <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700" />
+          </section>
+
+          <section class="mt-6"></section>
+        </div>
+      </main>
+      <app-footer></app-footer>
+    </div>
+
+    <script src="./src/js/component.js"></script>
+    <script src="./src/js/script.js"></script>
+  </body>
+</html>
