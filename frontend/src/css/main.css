@@ -30,7 +30,7 @@ input[type='number']::-webkit-outer-spin-button {
   }
 
   .nav-link {
-    @apply text-secondary-dark dark:text-light font-normal text-base md:text-sm hover:text-light dark:hover:bg-gray-dark md:hover:bg-primary px-2 md:py-2.5 rounded-md py-1 hover:bg-secondary-dark w-full cursor-pointer;
+    @apply text-secondary-dark dark:text-light font-normal text-base md:text-sm hover:text-light dark:hover:bg-gray-dark md:hover:bg-primary px-3 py-2 rounded-md hover:bg-secondary-dark w-full cursor-pointer;
   }
 
   .btn-primary {
