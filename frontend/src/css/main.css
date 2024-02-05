@@ -45,11 +45,11 @@ input[type='number']::-webkit-outer-spin-button {
     @apply w-full border-2 border-gray-200 outline-none transition dark:border-transparent rounded-md dark:text-light;
   }
 
-  .input-field__sm {
+  .input-field-sm {
     @apply input-field px-2 py-1 dark:bg-body-dark;
   }
 
-  .input-field__lg {
+  .input-field-lg {
     @apply input-field px-4 py-3 dark:bg-primary-dark;
   }
 
