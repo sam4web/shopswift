@@ -20,7 +20,7 @@ class Header extends HTMLElement {
           <li>
             <a>
               <button
-                class="text-sm text-light px-3 py-1.5 rounded-md border-primary border-2 transition"
+                class="text-sm text-light px-3 py-1 rounded-md border-primary border-2 transition"
               >
                 Logout
               </button>

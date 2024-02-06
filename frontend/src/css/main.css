@@ -30,11 +30,15 @@ input[type='number']::-webkit-outer-spin-button {
   }
 
   .nav-link {
-    @apply text-secondary-dark dark:text-light font-normal text-base md:text-sm hover:text-light dark:hover:bg-gray-dark md:hover:bg-primary px-3 py-2 rounded-md hover:bg-secondary-dark w-full cursor-pointer;
+    @apply text-secondary-dark dark:text-light font-normal text-base md:text-sm hover:text-light dark:hover:bg-gray-dark md:hover:bg-primary px-3 py-2 rounded-md hover:bg-secondary-dark w-full cursor-pointer transition;
+  }
+
+  .btn {
+    @apply text-base text-light px-3 md:px-5 py-2 md:py-3 rounded-lg border-2 transition hover:text-secondary-dark hover:bg-transparent dark:hover:text-light;
   }
 
   .btn-primary {
-    @apply text-base text-light bg-primary px-3 md:px-5 py-2 md:py-3 rounded-lg border-primary border-2 transition hover:text-secondary-dark hover:bg-transparent dark:hover:text-light;
+    @apply btn bg-primary border-primary;
   }
 
   .btn-secondary {
@@ -54,7 +58,7 @@ input[type='number']::-webkit-outer-spin-button {
   }
 
   .input-label {
-    @apply mb-1 inline-block text-gray-dark text-base dark:text-white;
+    @apply mb-1 inline-block text-gray-dark text-base dark:text-white transition;
   }
 
   .auth-input-field {
