@@ -2,7 +2,7 @@
   "name": "shopswift",
   "description": "SwiftShop: Elegant e-commerce site with Django, a learning project for web development fundamentals.",
   "scripts": {
-    "watch": "tailwindcss -i ./src/index.css -o ./dist/output.css --watch"
+    "watch": "tailwindcss -i ./static/css/main.css -o ./static/css/main.min.css --watch"
   },
   "keywords": [],
   "author": "sam4web",

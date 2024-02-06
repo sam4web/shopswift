@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} About Us {% endblock title %}
+
+{% block content %}
+<section>
+    <div class="wrapper">
+        <div class="grid gap-10 lg:gap-14 md:grid-cols-2">
+            <div class="flex">
+                <img class="rounded-lg shadow-2xl" src="{% static 'assets/about-image.jpg' %}" alt="about-image" />
+            </div>
+
+            <div class="space-y-3 lg:space-y-5 w-full max-w-md md:max-w-lg lg:mt-14">
+                <h1
+                    class="text-3xl lg:text-5xl transition dark:text-light text-secondary-dark font-extrabold line-break after:left-0 after:absolute after:w-20 after:h-1.5 after:bg-primary after:-bottom-4 after:rounded-sm relative mb-8">
+                    About Us
+                </h1>
+                <p class="font-normal text-base lg:text-lg dark:text-light">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quis
+                    provident quaerat nemo quas quia ducimus unde harum earum aspernatur
+                    recusandae, voluptates expedita nesciunt quibusdam consequuntur,
+                    dolorum cumque. Alias suscipit doloribus praesentium saepe quia
+                    voluptates, ratione, nesciunt tempore earum error unde magnam ad quod
+                    dignissimos voluptatibus sit ut.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light dark:bg-primary-dark transition py-1">
+    <div class="wrapper">
+        <h3 class="text-3xl lg:text-4xl text-gray font-extrabold dark:text-light">
+            Our Story
+        </h3>
+        <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700" />
+
+        <div class="space-y-4 lg:space-y-7 mt-6 font-normal dark:text-light text-base lg:text-lg">
+            <p class="float-left max-w-2xl">
+                Ducimus non recusandae, voluptas itaque tempore, reprehenderit
+                laudantium amet, iure neque nostrum animi architecto nihil aperiam.
+                Voluptatibus culpa cum autem aspernatur. Veritatis, vel ullam cupiditate
+                similique quo, iste quia accusamus eligendi vero dolorem in, unde aut
+                consequatur. Magni maiores facere earum sapiente iusto alias aspernatur
+                dolor illum dicta? Tempore odio odit cum pariatur sed. Voluptatem,
+                molestias ipsum. Amet, ab.
+            </p>
+            <div class="clear-both"></div>
+
+            <p class="float-right max-w-2xl">
+                Deleniti voluptas consequatur iusto, ut expedita debitis, ratione
+                asperiores molestiae praesentium voluptates nobis dolores, fugiat nisi
+                unde nulla soluta iste. Modi cumque pariatur voluptatibus, magni maxime
+                optio dolorem ipsum distinctio sint, odit illum
+            </p>
+            <div class="clear-both"></div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
