@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Orders {% endblock title %}
+
+{% block content %}
+<div class="wrapper">
+    <section class="flex justify-between">
+        <h3 class="text-2xl lg:text-3xl dark:text-light text-gray font-medium transition">
+            Your orders
+        </h3>
+        <p class="text-lg text-gray dark:text-light">Total orders: 20</p>
+    </section>
+    <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700" />
+
+    <section>
+        <div class="relative overflow-x-auto rounded-lg">
+            <table class="w-full text-base text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-base text-gray bg-gray-50 dark:text-light dark:bg-primary-dark">
+                    <tr>
+                        <th scope="col" class="px-6 py-4 font-medium">Name</th>
+                        <th scope="col" class="px-6 py-4 font-medium">Address</th>
+                        <th scope="col" class="px-6 py-4 font-medium">Products</th>
+                        <th scope="col" class="px-6 py-4 font-medium">Cost</th>
+                        <th scope="col" class="px-6 py-4 font-medium">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <td class="px-6 py-4">Whimsy Walter</td>
+                        <td class="px-6 py-4">Pun Lane, Hilarity Heights</td>
+                        <td class="px-6 py-4">1</td>
+                        <td class="px-6 py-4">$202.99</td>
+                        <td class="px-6 py-4">Feb 5th, 2024</td>
+                    </tr>
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <td class="px-6 py-4">Whimsy Walter</td>
+                        <td class="px-6 py-4">Pun Lane, Hilarity Heights</td>
+                        <td class="px-6 py-4">1</td>
+                        <td class="px-6 py-4">$202.99</td>
+                        <td class="px-6 py-4">Feb 5th, 2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+{% endblock content %}

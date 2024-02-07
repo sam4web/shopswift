@@ -1,0 +1,50 @@
+{% extends 'auth-base.html' %}
+{% load static %}
+{% block title %} Register {% endblock title %}
+
+{% block content %}
+<section class="w-full h-full flex justify-center items-center px-3">
+    <div class="max-w-lg w-full shadow-lg rounded-lg px-4 sm:px-5 py-7 md:p-8 space-y-6 md:space-y-8 bg-white">
+        <h2 class="text-4xl text-gray-dark font-medium transition text-center">
+            Register
+        </h2>
+
+        <div class="space-y-4 md:space-y-6">
+            <div>
+                <label for="username" class="auth-input-label">
+                    Username
+                </label>
+                <input class="auth-input-field" type="text" name="username" id="username" />
+            </div>
+
+            <div>
+                <label for="email" class="auth-input-label"> Email </label>
+                <input class="auth-input-field" type="email" name="email" id="email" />
+            </div>
+
+            <div>
+                <label for="password1" class="auth-input-label">
+                    Password
+                </label>
+                <input class="auth-input-field" type="password" name="password1" id="password1" />
+            </div>
+
+            <div>
+                <label for="password2" class="auth-input-label">
+                    Retype Password
+                </label>
+                <input class="auth-input-field" type="password" name="password2" id="password2" />
+            </div>
+        </div>
+
+        <button class="btn-primary w-full">Register</button>
+
+        <p class="text-center text-secondary-dark">
+            Already a member?
+            <a href="./login.html" class="text-primary font-medium">
+                Login
+            </a>
+        </p>
+    </div>
+</section>
+{% endblock content %}

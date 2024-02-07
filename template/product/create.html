@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} New Product {% endblock title %}
+
+{% block content %}
+<div class="wrapper">
+    <section>
+        <h3 class="text-2xl lg:text-3xl dark:text-light text-gray font-medium transition">
+            Add New Product
+        </h3>
+    </section>
+    <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700" />
+
+    <form method="POST" enctype="multipart/form-data" class="space-y-6">
+        <div>
+            <label for="name" class="input-label"> Product Name </label>
+            <input class="input-field-lg" type="text" name="name" id="name" />
+        </div>
+
+        <div>
+            <label for="category" class="input-label"> Category </label>
+            <select name="category" id="category" class="input-field-lg">
+                <option value="toys" selected>Toys</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="description" class="input-label"> Description </label>
+            <textarea class="input-field-lg h-52" type="text" name="description" id="description"></textarea>
+        </div>
+
+        <div>
+            <label for="price" class="input-label"> Price </label>
+            <input class="input-field-lg" type="number" name="price" id="price" />
+        </div>
+
+        <div>
+            <label for="image" class="input-label"> Image </label>
+            <input class="input-field-lg" type="file" name="image" id="image" accept="image/*" />
+        </div>
+
+        <button type="submit" class="btn-primary">Create Product</button>
+    </form>
+</div>
+{% endblock content %}
