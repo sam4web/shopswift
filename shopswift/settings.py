@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "shopswift.core",
+    "shopswift.user",
+    "shopswift.product",
 ]
 
 MIDDLEWARE = [
