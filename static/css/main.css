@@ -24,6 +24,15 @@ input[type='number']::-webkit-outer-spin-button {
   margin: 0;
 }
 
+.field-wrapper label {
+  @apply auth-input-label;
+}
+
+.field-wrapper input,
+.field-wrapper textarea {
+  @apply auth-input-field;
+}
+
 @layer utilities {
   .wrapper {
     @apply max-w-7xl w-full mx-auto px-4 lg:px-12 my-6 py-3 lg:my-11 lg:py-10;

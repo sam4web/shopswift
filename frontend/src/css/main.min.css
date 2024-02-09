@@ -947,8 +947,16 @@ video {
   height: 1rem;
 }
 
+.h-48{
+  height: 12rem;
+}
+
 .h-5{
   height: 1.25rem;
+}
+
+.h-52{
+  height: 13rem;
 }
 
 .h-6{
@@ -981,14 +989,6 @@ video {
 
 .h-screen{
   height: 100vh;
-}
-
-.h-48{
-  height: 12rem;
-}
-
-.h-52{
-  height: 13rem;
 }
 
 .w-0{
@@ -1189,6 +1189,10 @@ video {
 
 .resize{
   resize: both;
+}
+
+.list-disc{
+  list-style-type: disc;
 }
 
 .grid-cols-1{
@@ -1680,6 +1684,11 @@ video {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-rose-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 63 94 / var(--tw-bg-opacity));
 }
 
 .fill-light{
