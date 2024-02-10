@@ -5,11 +5,14 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
 
-
 from .forms import RegisterForm
 
 
+@login_required
 def profile(request):
+
+    user = request.user
+    context = {"user": user}
     return render(request, "user/profile.html")
 
 

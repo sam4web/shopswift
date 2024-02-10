@@ -4,37 +4,44 @@
 
 {% block content %} <div class="wrapper">
     <section class="grid md:grid-cols-2 gap-5 md:gap-11">
-        <img src="./src/assets/product-01.jpg" class="rounded-lg" alt="" />
+        <img src="/media/{{ product.image }}" class="rounded-lg" alt="{{ product.name }} Image" />
+
 
         <div class="space-y-4 lg:space-y-6">
             <div class="space-y-1 lg:space-y-3">
                 <h3 class="text-2xl lg:text-3xl dark:text-light text-gray font-medium transition">
-                    Avant-Grade Lamp
+                    {{ product.name }}
                 </h3>
                 <p class="text-lg lg:text-xl text-secondary-dark dark:text-light">
-                    $179.99
+                    ${{ product.price }}
                 </p>
             </div>
 
             <p class="font-normal text-base lg:text-lg dark:text-light pb-3">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto
-                totam eveniet fuga quae voluptas porro laborum temporibus odit
-                quod culpa voluptatem nemo odio cumque ipsum ipsam est itaque,
-                dolorem dolorum!
+                {{ product.description }}
             </p>
 
+
+
+            {% if request.user == product.created_by %}
+            <div class="space-x-2">
+                <a href="{% url 'product:edit' product.id %}">
+                    <button class="btn bg-emerald-600 border-emerald-600">
+                        Edit
+                    </button>
+                </a>
+                <a href="{% url 'product:delete' product.id %}">
+                    <button class="btn bg-red-600 border-red-600">Delete</button>
+                </a>
+            </div>
+            {% else %}
             <div>
                 <label for="quantity" class="input-label"> Quantity </label>
                 <input class="input-field-lg" type="number" name="quantity" id="quantity" value="1" />
             </div>
 
-            <!-- <button class="btn-primary">Add to Bag</button> -->
-            <div class="space-x-2">
-                <button class="btn bg-emerald-600 border-emerald-600">
-                    Edit
-                </button>
-                <button class="btn bg-red-600 border-red-600">Delete</button>
-            </div>
+            <button class="btn-primary">Add to Bag</button>
+            {% endif %}
         </div>
     </section>
 </div>
