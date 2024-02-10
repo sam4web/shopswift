@@ -24,13 +24,22 @@ input[type='number']::-webkit-outer-spin-button {
   margin: 0;
 }
 
-.field-wrapper label {
+.auth-field-wrapper label {
   @apply auth-input-label;
 }
 
-.field-wrapper input,
-.field-wrapper textarea {
+.auth-field-wrapper input {
   @apply auth-input-field;
+}
+
+.field-wrapper label {
+  @apply input-label;
+}
+
+.field-wrapper input,
+.field-wrapper select,
+.field-wrapper textarea {
+  @apply input-field-lg;
 }
 
 @layer utilities {

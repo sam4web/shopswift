@@ -11,33 +11,24 @@
     </section>
     <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700" />
 
-    <form method="POST" enctype="multipart/form-data" class="space-y-6">
-        <div>
-            <label for="name" class="input-label"> Product Name </label>
-            <input class="input-field-lg" type="text" name="name" id="name" />
-        </div>
 
-        <div>
-            <label for="category" class="input-label"> Category </label>
-            <select name="category" id="category" class="input-field-lg">
-                <option value="toys" selected>Toys</option>
-            </select>
-        </div>
+    <form method="POST" action="." enctype="multipart/form-data" class="space-y-6">
+        {% csrf_token %}
 
-        <div>
-            <label for="description" class="input-label"> Description </label>
-            <textarea class="input-field-lg h-52" type="text" name="description" id="description"></textarea>
+        {% for field in form %}
+        <div class="field-wrapper">
+            {{ field.label_tag }}
+            {{ field }}
         </div>
+        {% endfor %}
 
-        <div>
-            <label for="price" class="input-label"> Price </label>
-            <input class="input-field-lg" type="number" name="price" id="price" />
-        </div>
-
-        <div>
-            <label for="image" class="input-label"> Image </label>
-            <input class="input-field-lg" type="file" name="image" id="image" accept="image/*" />
-        </div>
+        {% if form.errors %}
+        <ul class="bg-rose-500 px-4 py-2 rounded-lg">
+            {% for key,value in form.errors.items %}
+            <li class="text-white">{{ value|escape }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
 
         <button type="submit" class="btn-primary">Create Product</button>
     </form>

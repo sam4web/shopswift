@@ -2556,7 +2556,7 @@ input[type='number']::-webkit-outer-spin-button {
   margin: 0;
 }
 
-.field-wrapper label{
+.auth-field-wrapper label{
   margin-bottom: 0.25rem;
   display: inline-block;
   font-size: 1rem;
@@ -2565,8 +2565,7 @@ input[type='number']::-webkit-outer-spin-button {
   color: rgb(65 69 88 / var(--tw-text-opacity));
 }
 
-.field-wrapper input,
-.field-wrapper textarea{
+.auth-field-wrapper input{
   width: 100%;
   border-radius: 0.375rem;
   border-width: 2px;
@@ -2578,6 +2577,56 @@ input[type='number']::-webkit-outer-spin-button {
   padding-bottom: 0.75rem;
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.field-wrapper label{
+  margin-bottom: 0.25rem;
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(65 69 88 / var(--tw-text-opacity));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+:is(.dark .field-wrapper label){
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.field-wrapper input,
+.field-wrapper select,
+.field-wrapper textarea{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+:is(.dark .field-wrapper input),:is(.dark 
+.field-wrapper select),:is(.dark 
+.field-wrapper textarea){
+  border-color: transparent;
+  --tw-text-opacity: 1;
+  color: rgb(240 246 255 / var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 25 32 / var(--tw-bg-opacity));
 }
 
 .after\:absolute::after{
