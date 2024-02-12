@@ -1,8 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404
+
+from ..product.models import Product
 
 
 def index(request):
-    return render(request, "core/index.html")
+    products = Product.objects.all().order_by("-created_at")[:3]
+    context = {"products": products}
+    return render(request, "core/index.html", context)
 
 
 def about(request):

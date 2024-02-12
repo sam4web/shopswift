@@ -28,66 +28,7 @@
             </div>
 
             <div>
-                <form action=""
-                    class="col-span-1 px-3 py-5 lg:px-5 lg:py-7 bg-light dark:bg-primary-dark transition rounded-xl space-y-3 sm:space-y-7">
-                    <div
-                        class="md:space-y-7 grid grid-cols-1 sm:grid-cols-3 gap-3 md:block justify-between items-center">
-                        <div>
-                            <label for="product" class="input-label"> Search Product </label>
-                            <input class="input-field-sm" type="text" name="product" id="product" />
-                        </div>
-
-                        <div>
-                            <label for="category" class="input-label">
-                                Select Category
-                            </label>
-                            <select name="category" id="category" class="input-field-sm">
-                                <option value="all" selected class="capitalize">all</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label for="sort" class="input-label"> Sort By </label>
-                            <select name="sort" id="sort" class="input-field-sm">
-                                <option value="low" selected>Price (Lowest)</option>
-                                <option value="high">Price (Highest)</option>
-                                <option value="order">Name (A - Z)</option>
-                                <option value="reverse-order">Name (Z - A)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="md:space-y-7 flex-col sm:flex-row flex justify-between sm:items-center gap-3 md:block">
-                        <div class="flex-1">
-                            <label for="min" class="input-label"> Price Range </label>
-                            <div class="flex gap-3 items-center">
-                                <input class="input-field-sm" type="number" name="product" id="product"
-                                    placeholder="Min" min="0" />
-                                -
-                                <input class="input-field-sm" type="number" name="product" id="product"
-                                    placeholder="Max" min="0" />
-                            </div>
-                        </div>
-
-                        <div class="flex flex-1 sm:justify-center md:justify-start items-center gap-3">
-                            <label for="free-shipping" class="inline-block text-gray-dark text-base dark:text-white">
-                                Free Shipping
-                            </label>
-                            <input type="checkbox" name="free-shipping" class="w-[15px] h-[15px]" id="free-shipping" />
-                        </div>
-                    </div>
-
-                    <div class="flex gap-2.5">
-                        <button type="submit"
-                            class="w-full text-base text-light bg-primary px-3 py-2 rounded-md border-primary transition">
-                            Submit
-                        </button>
-                        <button type="reset"
-                            class="w-full text-base text-light bg-red-600 px-3 py-2 rounded-md border-primary transition">
-                            Reset
-                        </button>
-                    </div>
-                </form>
+                {% include 'components/search-form.html' %}
             </div>
 
             <div>
@@ -103,13 +44,13 @@
                     My Products
                 </h3>
                 <p class="text-lg text-gray dark:text-light">
-                    Total products: {{ user.product.all|length }}
+                    Total products: {{ products|length }}
                 </p>
             </div>
             <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700" />
 
             <div class="space-y-6">
-                {% for product in user.product.all %} <div
+                {% for product in products %} <div
                     class="shadow-md rounded-lg p-5 space-y-4 sm:space-y-0 sm:space-x-7 text-center bg-white dark:bg-primary-dark flex-col sm:flex-row flex items-start transition">
                     <img src="/media/{{ product.image }}" class="rounded-md sm:w-2/5" alt="{{ product.name }} Image" />
                     <div class="space-y-3 text-left flex-1">

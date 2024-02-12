@@ -1,0 +1,63 @@
+<form action="." method="GET" id="search-form"
+    class="col-span-1 px-3 py-5 lg:px-5 lg:py-7 bg-light dark:bg-primary-dark transition rounded-xl space-y-3 sm:space-y-7">
+    <div class="md:space-y-7 grid grid-cols-1 sm:grid-cols-3 gap-3 md:block justify-between items-center">
+      <div>
+        <label for="product" class="input-label"> Search Product </label>
+        <input class="input-field-sm" type="text" name="product" id="product" value="{{ url_query.name }}" />
+      </div>
+
+      <div>
+        <label for="category" class="input-label"> Select Category </label>
+        <select name="category" id="category" class="input-field-sm">
+          <option value="all" selected>All</option>
+          {% for category in categories %}
+          <option value="{{ category.name }}" {% if category.name == url_query.category %} selected {% endif %}>
+            {{ category.name }}
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div>
+        <label for="sort" class="input-label"> Sort By </label>
+        <select name="sort" id="sort" class="input-field-sm">
+          <option value="low" {% if url_query.sort == 'low' %} selected {% endif %}>Price (Lowest)</option>
+          <option value="high" {% if url_query.sort == 'high' %} selected {% endif %}>Price (Highest)</option>
+          <option value="order" {% if url_query.sort == 'order' %} selected {% endif %}>Name (A - Z)</option>
+          <option value="reverse" {% if url_query.sort == 'reverse' %} selected {% endif %}>Name (Z - A)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="md:space-y-7 flex-col sm:flex-row flex justify-between sm:items-center gap-3 md:block">
+      <div class="flex-1">
+        <label for="min" class="input-label"> Price Range </label>
+        <div class="flex gap-3 items-center">
+          <input class="input-field-sm" type="number" name="min" id="min" placeholder="Min" min="0"
+            value="{{ url_query.min }}" />
+          -
+          <input class="input-field-sm" type="number" name="max" id="max" placeholder="Max" min="0"
+            value="{{ url_query.max }}" />
+        </div>
+      </div>
+    </div>
+
+    <div class="flex gap-2.5">
+      <button type="submit"
+        class="w-full text-base text-light bg-primary px-3 py-2 rounded-md border-primary transition">
+        Submit
+      </button>
+      <button type="reset" x-on:click="refreshPageWithoutQueries"
+        class="w-full text-base text-light bg-red-600 px-3 py-2 rounded-md border-primary transition">
+        Reset
+      </button>
+    </div>
+</form>
+
+
+<script>
+function refreshPageWithoutQueries() {
+  window.location.href = window.location.origin + window.location.pathname;
+}
+
+</script>

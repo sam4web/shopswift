@@ -38,21 +38,15 @@
         <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700" />
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 mt-14">
-            <div class="shadow-lg rounded-lg p-5 space-y-2 text-center bg-white dark:bg-body-dark">
-                <img src="{% static 'assets/product-01.jpg' %}" class="rounded-md mb-5" alt="" />
-                <h3 class="text-xl dark:text-light">Avant-Garde Lamp</h3>
-                <p class="text-lg text-gray dark:text-light">$179.99</p>
-            </div>
-            <div class="shadow-lg rounded-lg p-5 space-y-2 text-center bg-white dark:bg-body-dark">
-                <img src="{% static 'assets/product-02.jpg' %}" class="rounded-md mb-5" alt="" />
-                <h3 class="text-xl dark:text-light">Avant-Garde Lamp</h3>
-                <p class="text-lg text-gray dark:text-light">$179.99</p>
-            </div>
-            <div class="shadow-lg rounded-lg p-5 space-y-2 text-center bg-white dark:bg-body-dark">
-                <img src="{% static 'assets/product-03.jpg' %}" class="rounded-md mb-5" alt="" />
-                <h3 class="text-xl dark:text-light">Avant-Garde Lamp</h3>
-                <p class="text-lg text-gray dark:text-light">$179.99</p>
-            </div>
+            {% for product in products %}
+            <a href="{% url 'product:detail' product.id %}">
+                <div class="shadow-lg rounded-lg p-5 space-y-2 text-center bg-white dark:bg-body-dark">
+                    <img src="media/{{ product.image }}" class="rounded-md mb-5" alt="{{product.name}} Image" />
+                    <h3 class="text-xl dark:text-light">{{product.name}}</h3>
+                    <p class="text-lg text-gray dark:text-light">{{product.price}}</p>
+                </div>
+            </a>
+            {% endfor %}
         </div>
     </div>
 </section>

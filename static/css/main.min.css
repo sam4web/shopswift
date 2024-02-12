@@ -2052,6 +2052,10 @@ video {
   text-transform: uppercase;
 }
 
+.lowercase{
+  text-transform: lowercase;
+}
+
 .capitalize{
   text-transform: capitalize;
 }
@@ -2719,11 +2723,6 @@ input[type='number']::-webkit-outer-spin-button {
 :is(.dark .dark\:border-gray-700){
   --tw-border-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
-}
-
-:is(.dark .dark\:border-light){
-  --tw-border-opacity: 1;
-  border-color: rgb(240 246 255 / var(--tw-border-opacity));
 }
 
 :is(.dark .dark\:border-transparent){
