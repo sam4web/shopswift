@@ -12,7 +12,7 @@ from ..product.models import Product, Category
 @login_required
 def profile(request):
     user = request.user
-    products = Product.objects.filter(created_by=request.user).order_by("-created_at")
+    products = Product.objects.filter(created_by=request.user)
     categories = Category.objects.all()
     url_query = {}
 

@@ -9,4 +9,6 @@ urlpatterns = [
     path("<uuid:product_id>/", views.detail, name="detail"),
     path("edit/<uuid:product_id>/", views.edit, name="edit"),
     path("delete/<uuid:product_id>/", views.delete, name="delete"),
+    path("add-item/<uuid:product_id>/", views.add_item, name="add_item"),
+    path("remove-item/<uuid:product_id>/", views.remove_item, name="remove_item"),
 ]

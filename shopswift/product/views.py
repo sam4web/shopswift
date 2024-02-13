@@ -4,12 +4,12 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 
-from .models import Product, Category
+from .models import Product, Category, Cart
 from .forms import ProductForm
 
 
 def list(request):
-    products = Product.objects.all().order_by("-created_at")
+    products = Product.objects.all()
     categories = Category.objects.all()
     url_query = {}
 
@@ -101,3 +101,27 @@ def delete(request, product_id):
     if product is not None:
         product.delete()
         return redirect("product:list")
+
+
+@login_required
+def add_item(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    try:
+        cart = get_object_or_404(Cart, customer=request.user)
+    except:
+        cart = Cart.objects.create(customer=request.user)
+
+    cart.products.add(product)
+    return redirect("core:cart")
+
+
+@login_required
+def remove_item(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    try:
+        cart = get_object_or_404(Cart, customer=request.user)
+    except:
+        cart = Cart.objects.create(customer=request.user)
+
+    cart.products.remove(product)
+    return redirect("core:cart")
