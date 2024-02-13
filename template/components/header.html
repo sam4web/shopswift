@@ -78,7 +78,13 @@
             </svg>
           </button>
 
-          <a href="{% url 'core:cart' %}">
+          <a href="{% url 'core:cart' %}" class="relative inline-block">
+            {% if request.user.is_authenticated %}
+            <span
+              class="absolute bg-primary text-light w-5 h-5 flex justify-center items-center rounded-full text-xs bottom-3 left-3">
+              {{ request.user.cart.all.0.products.count }}
+            </span>
+            {% endif %}
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="w-6 h-6 dark:text-light">
               <path stroke-linecap="round" stroke-linejoin="round"

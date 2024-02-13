@@ -616,8 +616,16 @@ video {
   position: relative;
 }
 
+.bottom-3{
+  bottom: 0.75rem;
+}
+
 .left-1{
   left: 0.25rem;
+}
+
+.left-3{
+  left: 0.75rem;
 }
 
 .right-0{
@@ -2859,20 +2867,8 @@ input[type='number']::-webkit-outer-spin-button {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .md\:flex-row{
-    flex-direction: row;
-  }
-
   .md\:flex-col{
     flex-direction: column;
-  }
-
-  .md\:items-center{
-    align-items: center;
-  }
-
-  .md\:justify-between{
-    justify-content: space-between;
   }
 
   .md\:gap-11{
