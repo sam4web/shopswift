@@ -6,14 +6,21 @@
 <div class="wrapper">
     <section>
         <h3 class="text-2xl lg:text-3xl dark:text-light text-gray font-medium transition">
+            {% if request.user.is_authenticated and items %}
             Your orders
+            {% else %}
+            Your cart is empty
+            {% endif %}
         </h3>
     </section>
-    <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700" />
+    <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"/>
 
+
+    {% if request.user.is_authenticated and items %}
     <section class="md:grid grid-cols-4 md:gap-7 space-y-10 md:space-y-0 mt-6">
         <aside class="col-span-2">
-            <form action="" class="space-y-3">
+            <form action="." class="space-y-3" method="POST">
+                {% csrf_token %}
                 <h4 class="text-xl dark:text-light text-gray font-medium transition pb-1">
                     Shipping Information
                 </h4>
@@ -22,12 +29,12 @@
                     <label for="first-name" class="input-label">
                         First Name
                     </label>
-                    <input class="input-field-lg" type="text" name="first-name" id="first-name" />
+                    <input class="input-field-lg" type="text" name="first-name" id="first-name" required/>
                 </div>
 
                 <div class="pb-1.5">
                     <label for="address" class="input-label"> Address </label>
-                    <input class="input-field-lg" type="text" name="address" id="address" />
+                    <input class="input-field-lg" type="text" name="address" id="address" required/>
                 </div>
 
                 <button class="btn-primary w-full">Place Your Order</button>
@@ -38,15 +45,15 @@
             <div class="px-3 py-5 lg:p-5 bg-light dark:bg-primary-dark transition rounded-xl space-y-4 mb-4">
                 <div class="border-b pb-1.5 flex justify-between">
                     <p class="text-gray dark:text-light">Subtotal</p>
-                    <p class="text-gray-dark dark:text-light">$339.99</p>
+                    <p class="text-gray-dark dark:text-light">${{ pricing.sub_total }}</p>
                 </div>
                 <div class="border-b pb-1.5 flex justify-between">
                     <p class="text-gray dark:text-light">Shipping</p>
-                    <p class="text-gray-dark dark:text-light">$5.00</p>
+                    <p class="text-gray-dark dark:text-light">$${{ pricing.shipping }}</p>
                 </div>
                 <div class="border-b pb-1.5 flex justify-between">
                     <p class="text-gray dark:text-light">Tax</p>
-                    <p class="text-gray-dark dark:text-light">$34.00</p>
+                    <p class="text-gray-dark dark:text-light">${{ pricing.tax }}</p>
                 </div>
 
                 <div class="flex justify-between">
@@ -54,11 +61,12 @@
                         Order Total
                     </p>
                     <p class="text-gray-dark dark:text-light font-medium">
-                        $400.00
+                        ${{ pricing.order_total }}
                     </p>
                 </div>
             </div>
         </aside>
     </section>
+    {% endif %}
 </div>
 {% endblock content %}
