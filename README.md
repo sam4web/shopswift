@@ -14,7 +14,7 @@ Welcome to SwiftShop, a personal project showcasing a simple and elegant e-comme
 ## Technologies Used
 
 - **Django Framework:** A high-level Python web framework for rapid development.
-- **HTML, CSS, JavaScript:** Front-end development for a responsive and dynamic user interface.
+- **HTML, Tailwind, Alpine.js:** Front-end development for a responsive and dynamic user interface.
 - **SQLite Database:** A lightweight and easy-to-use database for managing product and user data.
 
 ## Contributions
